@@ -13,7 +13,16 @@
 		<li @if($active == 'home') class="active" @endif>{{ HTML::link('/', 'Home') }}</li>
 		<li @if($active == 'browse') class="active" @endif>{{ HTML::link('browse', 'Browse') }}</li>
 		<li @if($active == 'about') class="active" @endif>{{ HTML::link('about', 'About') }}</li>
-		<li @if($active == 'login') class="active" @endif>{{ HTML::link('users/login', 'Login') }}</li>
+		@if(Auth::guest())
+			<li @if($active == 'register') class="active" @endif>{{ HTML::link('users/register', 'Register') }}</li>
+			<li @if($active == 'login') class="active" @endif>{{ HTML::link('users/login', 'Login') }}</li>
+		@else	
+			<li @if($active == 'profile') class="active" @endif>{{ HTML::link('users/profile', 'Profile') }}</li>
+			@if(Auth::user()->type == 'A')
+				<li @if($active == 'dashboard') class="active" @endif>{{ HTML::link('dashboard', 'Dashboard') }}</li>
+			@endif
+			<li @if($active == 'logout') class="active" @endif>{{ HTML::link('users/logout', 'Logout') }}</li>
+		@endif
 	</ul>
 </div>
 </nav>

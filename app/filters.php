@@ -88,3 +88,21 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Admin Filter
+|--------------------------------------------------------------------------
+| If the current user is not admin he is redirected to the homepage.
+| A message is also supplied letting the user know his fault.
+*/
+
+Route::filter('admin', function(){
+	if(Auth::check()){
+		if(Auth::user()->type == 'A') return;
+	}
+	return Redirect::to('/')->with([
+		'flashMessage' => 'you do not have necessary clearance, access denied',
+		'alertClass' => 'alert-danger'
+		]);
+});

@@ -22,6 +22,25 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public $timestamps = false;
 
 	/**
+	 * Form validation rules for registration.
+	 */
+	public static $registrationRules = [
+		'fname' => 'required',
+		'lname' => 'required',
+		'email' => 'email|required|unique:users,email',
+		'password' => 'required|min:6',
+		'password2' => 'required|same:password'
+		];
+
+	/**
+	 * Form validation rules for logging in.
+	 */
+	public static $loginRules = [
+		'email' => 'required',
+		'password' => 'required'
+		];
+
+	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
