@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS elearning;
+DROP DATABASE IF EXISTS funlearn;
 
-CREATE DATABASE elearning;
+CREATE DATABASE funlearn;
 
-USE elearning;
+USE funlearn;
 
 CREATE TABLE users(
 	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
@@ -29,7 +29,7 @@ CREATE TABLE sports(
 	opt3			CHAR(50),
 	opt4			CHAR(50),
 	answer			TINYINT(1)
-);
+) DEFAULT CHARSET=utf8;
 
 CREATE TABLE bangladeshs(
 	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
@@ -39,7 +39,7 @@ CREATE TABLE bangladeshs(
 	opt3			CHAR(50),
 	opt4			CHAR(50),
 	answer			TINYINT(1)
-);
+) DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE current_affairs(
@@ -50,7 +50,7 @@ CREATE TABLE current_affairs(
 	opt3			CHAR(50),
 	opt4			CHAR(50),
 	answer			TINYINT(1)
-);
+) DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE geographies(
@@ -61,7 +61,7 @@ CREATE TABLE geographies(
 	opt3			CHAR(50),
 	opt4			CHAR(50),
 	answer			TINYINT(1)
-);
+) DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE internationals(
@@ -72,7 +72,7 @@ CREATE TABLE internationals(
 	opt3			CHAR(50),
 	opt4			CHAR(50),
 	answer			TINYINT(1)
-);
+) DEFAULT CHARSET=utf8;
 
 CREATE TABLE seen(
 	user_id			INTEGER(10) UNSIGNED,
@@ -81,7 +81,7 @@ CREATE TABLE seen(
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (category_id) REFERENCES categories(id),
 	PRIMARY KEY (user_id, category_id)
-);
+) DEFAULT CHARSET=utf8;
 
 -- database seeds --
 INSERT INTO users VALUES(
