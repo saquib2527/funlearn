@@ -75,4 +75,16 @@ class Helper{
 		return 1;
 	}
 
+	/**
+	 * returns rank from points
+	 * @param points Integer points
+	 * @return rank rank based on points
+	 */
+	public static function rank_from_points($points)
+	{
+		$rank_divider = 100;
+		$rank = floor($points / $rank_divider);
+		return $rank;
+	}
+
 }
