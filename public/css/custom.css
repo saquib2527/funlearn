@@ -1,0 +1,382 @@
+/*global styles and typography*/
+body{
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'Raleway', Helvetica, Arial;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+p{
+	line-height: 30px;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #333;
+	text-transform: uppercase;
+	font-family: 'Raleway', Helvetica, Arial;
+	font-weight: 700;
+}
+
+a{
+	color: #3498db;
+	text-decoration: none;
+}
+
+a:hover, a:focus{
+	color: #308ac6;
+}
+
+.btn-default{
+	border-radius: 2px;
+	border: 1px solid #bdc3c7;
+	font-size: 14px;
+	color: #95a5a6;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 11px 20px;
+}
+.btn-default:hover{
+	background: #fff;
+	color: #3498db;
+	border: 1px solid #3498db;
+}
+
+.btn:active{
+	box-shadow: none;
+}
+/*global styles and typography end*/
+
+/*header*/
+.navbar-brand{
+	width: 179px;
+	height: 32px;
+	padding: 0;
+	margin: 0;
+	background: url(../img/brand.png) no-repeat;
+	text-indent: -9999px;
+}
+
+.navbar-default{
+	background: none;
+	border: none;
+	padding: 0 0 60px 0;
+}
+
+.navbar-default .navbar-nav>li>a{ /*text of link*/
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #95a5a6;
+	padding: 11px 0; /*mobile first*/
+	text-align: center; /*mobile first*/
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{ /*why did I need focus?*/
+	color: #fff;
+}
+
+/*this is for the active*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	color: white;
+	background: none;
+	outline: 0; /*why do I need this?*/
+}
+
+.navbar-toggle{
+	border: none;
+	margin-top: 0;
+	margin-right: 0;
+	text-align: center;
+	width: 32px;
+	height: 32px;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+	background: none;
+	outline: none; /*outline when clicked shows a border*/
+}
+
+.navbar-default .navbar-collapse{
+	border: none;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: none; /*appears to be a border*/
+	border-radius: 2px;
+}
+
+.jumbotron{
+	background: #2c3e50 url(../img/banner.png) no-repeat;
+	background-size: cover; /*makes background sort of responsive*/
+	max-height: 800px;
+	padding: 60px 0;
+}
+
+.jumbotron h1{
+	color: #fff;
+	font-weight: 300;
+	margin: 0 0 60px 0;
+}
+
+.jumbotron h1 span{
+	color: #f39c12;
+	font-weight: 700;
+}
+
+.jumbotron h3{
+	color: #95a5a6;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 400;
+	text-transform: none; /*needed to overwrite uppercase set previously*/
+	margin: 0 0 60px 0;
+}
+
+.jumbotron h3 span{
+	color: #fff;
+}
+
+.jumbotron .btn-primary{
+	border-radius: 2px;
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.05);
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 16px 30px;
+}
+
+.jumbotron .btn-primary:hover{
+	background: rgba(255, 255, 255, 0.1);
+}
+/*header end*/
+
+/*****************nav only*****************/
+.nav-only{
+	background-color: #2c3e50;
+	padding-top: 30px;
+}
+.nav-only .navbar-default{
+	padding-bottom: 30px;
+}
+.nav-only .navbar{
+	margin-bottom: 0;
+}
+/***************nav only end***************/
+
+/*************carousel with heading*******************/
+.heading{
+	padding: 60px 0;
+}
+.heading h1{
+	background: url(img/heading.png) no-repeat;
+	background-position: center bottom; /*mobile first*/
+	padding: 0 0 20px 0;
+}
+
+#creative-process{
+	padding: 0 0 60px 0;
+}
+
+.carousel-indicators {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	z-index: 15;
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: -44px;
+	padding-left: 0;
+	list-style: none;
+	text-align: center; /*mobile first*/
+}
+
+.carousel-indicators li {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	margin: 0 0 0 -6px;
+	text-indent: 0;
+	//border: 1px solid #95a5a6;
+	border: 1px solid #bdc3c7;
+	border-radius: 0;
+	cursor: pointer;
+	color: #95a5a6;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 11px 20px;
+}
+.carousel-indicators li:first-child {
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-top-left: 2px;
+	-moz-border-radius-bottom-left: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+.carousel-indicators li:last-child {
+	-webkit-border-top-right-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-radius-top-right: 2px;
+	-moz-border-radius-bottom-right: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.carousel-indicators .active {
+	position: relative;
+	z-index: 10;
+	margin: 0 0 0 -6px;
+	width: auto;
+	height: auto;
+	color: #3498db;
+	border: 1px solid #3498db;
+	background: transparent;
+}
+
+#carousel-process .item{
+	padding-top: 104px;
+}
+
+#carousel-process .item img{
+	margin-bottom: 60px;
+}
+
+#carousel-process .item h4{
+	margin-bottom: 30px;
+}
+
+#carousel-process .item p{
+	margin-bottom: 0 30px;
+}
+
+
+
+/******************footer******************/
+footer{
+	padding: 60px 0;
+}
+.copyright small{
+	color: #95a5a6;
+	font-size: 13px;
+}
+/******************footer end******************/
+
+/******************login panel*********************/
+.center{
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#login-panel{
+	margin-top: 60px;
+}
+
+#login-panel .panel{
+	border: none;
+	box-shadow: none;
+}
+
+#login-panel .panel-heading{
+	background: #2c3e50;
+	border: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	padding-top: 5px;
+	text-transform: uppercase;
+	color: #f39c12;
+}
+
+#login-panel .panel-heading>h3{
+	color: #f39c12;
+}
+
+
+#login-panel .panel-body{
+	background: #54606b;
+}
+
+#login-panel .input-group{
+	border: 1px solid #2c3e50;
+	border-radius: none;
+	margin-bottom: 30px;
+}
+
+#login-panel .glyphicon{
+	top: 0;
+}
+
+#login-panel .input-group-addon{
+	background: #2c3e50;
+	color: #f39c12;
+	border: none;
+}
+
+#login-panel .form-control{
+	box-shadow: none;
+	background: #ccc;
+	color: #2c3e50;
+	font-weight: 700;
+}
+#login-panel .form-control:focus{
+	border-color: #2c3e50;
+	box-shadow: none;
+}
+#login-panel .input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn{
+	border-radius: 0;
+}
+/*button*/
+#login-panel .btn-block{
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 24px;
+	background: #2c3e50;
+	color: #f39c12;
+	border-radius: 0;
+}
+#login-panel .btn-block:hover{
+	color: #ccc;
+}
+#login-panel .btn-block:focus{
+	outline: none;
+	color: #f39c12;
+}
+/******************login panel end*********************/
+
+/******************responsive******************/
+@media(min-width:768px){
+	.navbar-default .navbar-collapse{background: none;}
+	.navbar-default .navbar-nav{float: right;}
+	.navbar-default .navbar-nav>li{margin-left: 30px;}
+	.navbar-default .navbar-nav>li>a{padding: 9px 0 0 0;}
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+		border-bottom: 2px solid #fff;
+	}
+
+	#carousel-process .item img{
+		display: inline-block !important;
+	}
+}
+
+@media(min-width:992px){
+	.navbar-default .navbar-nav>li{margin-left: 40px;}
+	.jumbotron h3{font-size: 24px;}
+	.heading h1{text-align: left; background-position: left bottom;}
+	#carousel-process .carousel-indicators{
+		margin-bottom: 84px;
+		text-align: right;
+	}
+	#carousel-process .item h4{text-align: left;}
+	#carousel-process .item p{padding: 0; text-align: left;}
+}
+
+@media(min-width:1200px){
+	.jumbotron{padding: 60px 0 180px 0;}
+	.navbar{margin-bottom: 0;}
+	.jumbotron h1{padding-top: 180px;}
+	.jumbotron h3{padding-top: 120px;}
+	.heading{padding: 120px 0;}
+	#carousel-process .carousel-indicators{margin-bottom: 144px; text-align: right;}
+}

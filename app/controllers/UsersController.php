@@ -34,7 +34,9 @@ class UsersController extends BaseController{
 	 */
 	public function getLogin()
 	{
-
+		return View::make('users.login', [
+			'active' => 'login'
+			]);
 	}
 
 	/**
