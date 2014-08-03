@@ -18,6 +18,11 @@ Route::get('/', function()
 
 Route::get('exp', function()
 {
-	return Helper::create_table_from_category_name('Geography');
+	Auth::attempt([
+		'email' => 'saquib2527@yahoo.com',
+		'password' => 'qwerty'
+		]);
 });
 
+Route::controller('dashboard', 'DashboardController');
+Route::controller('users', 'UsersController');
