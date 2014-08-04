@@ -155,6 +155,7 @@ a:hover, a:focus{
 .nav-only{
 	background-color: #2c3e50;
 	padding-top: 30px;
+	margin-bottom: 60px;
 }
 .nav-only .navbar-default{
 	padding-bottom: 30px;
@@ -274,10 +275,6 @@ footer{
 	margin-right: auto;
 }
 
-#login-panel{
-	margin-top: 60px;
-}
-
 #login-panel .panel{
 	border: none;
 	box-shadow: none;
@@ -348,6 +345,29 @@ footer{
 	color: #f39c12;
 }
 /******************login panel end*********************/
+
+/**********************browse category*************************/
+.page-heading{
+	margin-bottom: 30px;
+}
+
+.rules .give-test, .table .give-test{
+	border-radius: 0;
+	border-color: #5cb85c;
+}
+/**********************browse category end*************************/
+
+/*****************test landing page****************/
+.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*****************test landing page end****************/
 
 /******************responsive******************/
 @media(min-width:768px){

@@ -20,10 +20,11 @@ Route::get('/', function()
 
 Route::get('exp', function()
 {
-	$var = str_replace('-', ' ', 'current-affairs');
-	var_dump($var);
+	Session::forget('name');
+	var_dump(Session::all());
 });
 
 Route::controller('dashboard', 'DashboardController');
 Route::controller('users', 'UsersController');
 Route::controller('categories', 'CategoriesController');
+Route::controller('tests', 'TestsController');

@@ -2,6 +2,16 @@
 
 /*
 |--------------------------------------------------------------------------
+| Constants 
+|--------------------------------------------------------------------------
+|
+| Constants for use inside application
+ */
+
+define('NUMBER_OF_QUESTIONS', 10);
+
+/*
+|--------------------------------------------------------------------------
 | Register The Laravel Class Loader
 |--------------------------------------------------------------------------
 |
@@ -50,6 +60,33 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Model not found exception handler
+|--------------------------------------------------------------------------
+|
+| Gets fired when we cant find our required model.
+*/
+
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e)
+{
+	return View::make('errors.404', ['active' => '404']);
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Model not found exception handler
+|--------------------------------------------------------------------------
+|
+| Gets fired when we cant find our required model.
+*/
+
+App::missing(function($error)
+{
+	return View::make('errors.404', ['active' => '404']);
 });
 
 /*
