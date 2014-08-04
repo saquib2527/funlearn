@@ -20,8 +20,7 @@ Route::get('/', function()
 
 Route::get('exp', function()
 {
-	Session::forget('name');
-	var_dump(Session::all());
+	return Helper::select_test_qids(2, 1);
 });
 
 Route::controller('dashboard', 'DashboardController');

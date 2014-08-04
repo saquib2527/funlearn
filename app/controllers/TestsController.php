@@ -41,6 +41,26 @@ class TestsController extends BaseController{
 		if( ! (Session::has('test_category_id') && Session::has('test_category_name'))){
 			return Redirect::to('categories');
 		}
+
+		//generate array of ids of chosen category
+		$qids = DB::table('questions')
+				->where('category_id', Session::get('test_category_id'))
+				->lists('id');
+		//generate array of ids of already seen questions from that category
+		$seen_qids = DB::table('seen')
+				->where([
+					'user_id' => Auth::user()->id, 
+					'category_id' => Session::get('test_category_id')
+					])
+				->pluck(qids);
+		if($seen_qids !== NULL){
+			$seen_qids = json_decode($seen_qids);
+			$eligible_qids = Helper::better_array_diff($qids, $seen_qids);
+		}else{
+			$eligible_qids = $qids;
+		}
+
+		return $qids;
 	}
 
 }
