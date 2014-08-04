@@ -20,11 +20,10 @@ Route::get('/', function()
 
 Route::get('exp', function()
 {
-	Auth::attempt([
-		'email' => 'saquib2527@yahoo.com',
-		'password' => 'qwerty'
-		]);
+	$var = str_replace('-', ' ', 'current-affairs');
+	var_dump($var);
 });
 
 Route::controller('dashboard', 'DashboardController');
 Route::controller('users', 'UsersController');
+Route::controller('categories', 'CategoriesController');

@@ -11,7 +11,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
 	<ul class="nav navbar-nav">
 		<li @if($active == 'home') class="active" @endif>{{ HTML::link('/', 'Home') }}</li>
-		<li @if($active == 'browse') class="active" @endif>{{ HTML::link('browse', 'Browse') }}</li>
+		<li @if($active == 'browse') class="active" @endif>{{ HTML::link('categories', 'Browse') }}</li>
 		<li @if($active == 'about') class="active" @endif>{{ HTML::link('about', 'About') }}</li>
 		@if(Auth::guest())
 			<li @if($active == 'register') class="active" @endif>{{ HTML::link('users/register', 'Register') }}</li>
