@@ -10,7 +10,7 @@
 				<div class="row text-center">
 					<h1>Welcome to <span>Funlearn</span>!</h1>
 					<h3>test your <span>knowledge base</span> on a number of categories</h3>
-					<a class="btn btn-primary btn-lg">Get Started</a>
+					{{ HTML::link('users/register', 'Get Started', ['class' => 'btn btn-primary btn-lg']) }}
 				</div>
 			</div>
 		</div>

@@ -18,7 +18,9 @@ class UsersController extends BaseController{
 	 */
 	public function getRegister()
 	{
-
+		return View::make('users.register', [
+			'active' => 'register'
+			]);
 	}
 
 	/**
@@ -26,7 +28,25 @@ class UsersController extends BaseController{
 	 */
 	public function postRegister()
 	{
+		$inputs = Input::only('fname', 'lname', 'email', 'password', 'password2');
+		$v = Validator::make($inputs, User::$registrationRules, User::$registrationMessages);
 
+		if($v->passes()){
+			$user = new User;
+			$user->fname = $inputs['fname'];
+			$user->lname = $inputs['lname'];
+			$user->email = $inputs['email'];
+			$user->password = Hash::make($inputs['password']);
+			$user->type = 'M';
+			$user->save();
+
+			Auth::loginUsingId($user->id);
+			return Redirect::to('/')->with([
+				'flashMessage' => 'Congrats, you are now logged in!',
+				'alertClass' => 'alert-success'
+				]);
+		}
+		return Redirect::to('users/register')->withInput()->withErrors($v);
 	}
 
 	/**
@@ -45,7 +65,7 @@ class UsersController extends BaseController{
 	public function postLogin()
 	{
 		$inputs = Input::only('email', 'password');
-		$v = Validator::make($inputs, User::$loginRules);
+		$v = Validator::make($inputs, User::$loginRules, User::$loginMessages);
 
 		if($v->passes()){
 			if(Auth::attempt($inputs)){

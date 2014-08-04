@@ -33,11 +33,34 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		];
 
 	/**
+	 * Error messages for registration panel.
+	 */
+	public static $registrationMessages = [
+		'fname.required' => 'Your first name is required.',
+		'lname.required' => 'Your last name is required.',
+		'email.email' => 'You need to provide a valid email address.',
+		'email.required' => 'Your email address is required.',
+		'email.unique' => 'User with this email address is already registered.',
+		'password.required' => 'You need to provide a password.',
+		'password.min' => 'Password should be at least 6 characters.',
+		'password2.required' => 'You need to retype your password.',
+		'password2.same' => 'Password does not match.'
+		];
+
+	/**
 	 * Form validation rules for logging in.
 	 */
 	public static $loginRules = [
 		'email' => 'required',
 		'password' => 'required'
+		];
+
+	/**
+	 * Error messages for login panel.
+	 */
+	public static $loginMessages = [
+		'email.required' => 'Please enter your email address.',
+		'password.required' => 'Please enter your password.'
 		];
 
 	/**

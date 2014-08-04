@@ -264,6 +264,10 @@ footer{
 /******************footer end******************/
 
 /******************login panel*********************/
+.form-error{
+	color: #fff;
+}
+
 .center{
 	float: none;
 	margin-left: auto;
