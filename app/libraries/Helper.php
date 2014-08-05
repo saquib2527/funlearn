@@ -128,6 +128,17 @@ class Helper{
 	}
 
 	/**
+	 * Calculates points earned
+	 *
+	 * @param num_correct_answer integer number of correct answers
+	 * @param interval integer number of seconds taken to complete test
+	 */
+	public static function calculate_points_earned($num_correct_answer, $interval)
+	{
+		return round((1000 / $interval) * $num_correct_answer);
+	}
+
+	/**
 	 * @desc returns table name from category name
 	 * @param category_name String name of category
 	 * @return String table name
