@@ -10,7 +10,9 @@
 				<div class="row text-center">
 					<h1>Welcome to <span>Funlearn</span>!</h1>
 					<h3>test your <span>knowledge base</span> on a number of categories</h3>
+					@if(Auth::guest())
 					{{ HTML::link('users/register', 'Get Started', ['class' => 'btn btn-primary btn-lg']) }}
+					@endif
 				</div>
 			</div>
 		</div>
