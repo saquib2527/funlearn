@@ -20,7 +20,26 @@ Route::get('/', function()
 
 Route::get('exp', function()
 {
-	return Helper::select_test_qids(2, 1);
+	$ids = [];
+	for($i = 1; $i <= 49961; $i+=5){
+		$ids[] = $i;
+	}
+	$ids = json_encode($ids);
+	DB::table('seen')
+		->update([
+		'user_id' => 2,
+		'category_id' => 1,
+		'qids' => $ids
+		]);
+
+	$start = microtime(true);
+	$q = Helper::select_test_qids(2, 1);
+	$questions = DB::table('questions')
+		->whereIn('id', $q)
+		->get();
+	var_dump($questions);
+	$end = microtime(true);
+	echo "<br>time taken: " . ($end - $start) . " seconds<br>";
 });
 
 Route::controller('dashboard', 'DashboardController');

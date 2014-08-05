@@ -351,7 +351,7 @@ footer{
 	margin-bottom: 30px;
 }
 
-.rules .give-test, .table .give-test{
+.rules .give-test, .table .give-test, .question-container .give-test{
 	border-radius: 0;
 	border-color: #5cb85c;
 }
@@ -366,8 +366,49 @@ footer{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
-
 /*****************test landing page end****************/
+
+
+/****************test attend page****************/
+.question-container{
+	margin-bottom: 60px;
+}
+#examForm{
+	margin-top: 60px;
+}
+
+.question-container .panel{
+	border: 0px;
+}
+
+.question-container .panel-default>.panel-heading{
+	background-color: #f4726d;/*was #f5f5f5*/
+	color: #fff;
+	border-radius: 0px;
+	border-color: #f4726d;
+	border-bottom: 0px;
+}
+
+.question-container .panel-default>.panel-body{
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.question-container .panel{
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+#timer-nav{
+	background-color: #5cb85c;
+	padding-bottom: 20px;
+}
+#timer-nav>h1{
+	color: #fff;
+}
+/****************test attend page end****************/
+
 
 /******************responsive******************/
 @media(min-width:768px){
