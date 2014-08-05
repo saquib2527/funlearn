@@ -401,13 +401,47 @@ footer{
 }
 
 #timer-nav{
-	background-color: #5cb85c;
+	background-color: #2c3e50;
 	padding-bottom: 20px;
 }
 #timer-nav>h1{
 	color: #fff;
 }
 /****************test attend page end****************/
+
+/****************results page***************/
+.details .panel{
+	border: 0px;
+}
+
+.details .panel-default>.panel-heading{
+	background-color: #f4726d;/*was #f5f5f5*/
+	color: #fff;
+	border-radius: 0px;
+	border-color: #f4726d;
+	border-bottom: 0px;
+}
+
+.details .panel-default>.panel-footer{
+	background-color: #fff;
+	border-radius: 0px;
+	border-color: #ddd;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.details .panel-default>.panel-body{
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 0px;
+}
+
+.details .panel{
+	box-shadow: none;
+	border-radius: 0px;
+}
+/****************results page end***************/
 
 
 /******************responsive******************/

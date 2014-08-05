@@ -13,5 +13,7 @@
 
 	@include('layouts.footer')
 
+	@yield('script')
+
 </body>
 </html>
