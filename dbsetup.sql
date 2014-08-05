@@ -12,7 +12,7 @@ CREATE TABLE users(
 	password		CHAR(60),
 	type			CHAR(1),
 	remember_token	CHAR(100),
-	points			INTEGER(10)
+	points			INTEGER(10)					DEFAULT 0
 );
 
 CREATE TABLE categories(
@@ -21,57 +21,16 @@ CREATE TABLE categories(
 	description		CHAR(255)
 );
 
-CREATE TABLE sports(
-	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
-	question		CHAR(255),
-	opt1			CHAR(50),
-	opt2			CHAR(50),
-	opt3			CHAR(50),
-	opt4			CHAR(50),
-	answer			TINYINT(1)
-) DEFAULT CHARSET=utf8;
-
-CREATE TABLE bangladeshs(
-	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
-	question		CHAR(255),
-	opt1			CHAR(50),
-	opt2			CHAR(50),
-	opt3			CHAR(50),
-	opt4			CHAR(50),
-	answer			TINYINT(1)
-) DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE current_affairs(
-	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
-	question		CHAR(255),
-	opt1			CHAR(50),
-	opt2			CHAR(50),
-	opt3			CHAR(50),
-	opt4			CHAR(50),
-	answer			TINYINT(1)
-) DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE geographies(
-	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
-	question		CHAR(255),
-	opt1			CHAR(50),
-	opt2			CHAR(50),
-	opt3			CHAR(50),
-	opt4			CHAR(50),
-	answer			TINYINT(1)
-) DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE internationals(
-	id				INTEGER(10) UNSIGNED		AUTO_INCREMENT		PRIMARY KEY,
-	question		CHAR(255),
-	opt1			CHAR(50),
-	opt2			CHAR(50),
-	opt3			CHAR(50),
-	opt4			CHAR(50),
-	answer			TINYINT(1)
+CREATE TABLE questions(
+	id					INTEGER(10) UNSIGNED		AUTO_INCREMENT			PRIMARY KEY,
+	category_id			INTEGER(10) UNSIGNED,
+	question			VARCHAR(255),
+	opt1				VARCHAR(50),
+	opt2				VARCHAR(50),
+	opt3				VARCHAR(50),
+	opt4				VARCHAR(50),
+	answer				TINYINT(1),
+	FOREIGN KEY(category_id) REFERENCES categories(id)
 ) DEFAULT CHARSET=utf8;
 
 CREATE TABLE seen(
@@ -89,6 +48,16 @@ INSERT INTO users VALUES(
 	'Nazmus',
 	'Saquib',
 	'saquib2527@yahoo.com',
+	'$2y$10$INpSUl4Jcy9AeNNITReUYO7nTShTN1grckzX58ytgh/i7rzE0gfta',
+	'A',
+	'',
+	0
+);
+INSERT INTO users VALUES(
+	2,
+	'Ishtiyaque',
+	'Ahmad',
+	'ishtiyaque2197@yahoo.com',
 	'$2y$10$INpSUl4Jcy9AeNNITReUYO7nTShTN1grckzX58ytgh/i7rzE0gfta',
 	'M',
 	'',
